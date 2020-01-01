@@ -1,0 +1,129 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "resources/angular/projects",
+  "projects": {
+    "laravel-angular": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "sass"
+        }
+      },
+      "root": "resources/angular/projects/laravel-angular",
+      "sourceRoot": "resources/angular/projects/laravel-angular/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "public/angular/laravel-angular",
+            "index": "resources/angular/projects/laravel-angular/src/index.html",
+            "main": "resources/angular/projects/laravel-angular/src/main.ts",
+            "polyfills": "resources/angular/projects/laravel-angular/src/polyfills.ts",
+            "tsConfig": "resources/angular/projects/laravel-angular/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "resources/angular/projects/laravel-angular/src/favicon.ico",
+              "resources/angular/projects/laravel-angular/src/assets"
+            ],
+            "styles": [
+              "resources/angular/projects/laravel-angular/src/styles.sass"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "resources/angular/projects/laravel-angular/src/environments/environment.ts",
+                  "with": "resources/angular/projects/laravel-angular/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "laravel-angular:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "laravel-angular:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "laravel-angular:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "resources/angular/projects/laravel-angular/src/test.ts",
+            "polyfills": "resources/angular/projects/laravel-angular/src/polyfills.ts",
+            "tsConfig": "resources/angular/projects/laravel-angular/tsconfig.spec.json",
+            "karmaConfig": "resources/angular/projects/laravel-angular/karma.conf.js",
+            "assets": [
+              "resources/angular/projects/laravel-angular/src/favicon.ico",
+              "resources/angular/projects/laravel-angular/src/assets"
+            ],
+            "styles": [
+              "resources/angular/projects/laravel-angular/src/styles.sass"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "resources/angular/projects/laravel-angular/tsconfig.app.json",
+              "resources/angular/projects/laravel-angular/tsconfig.spec.json",
+              "resources/angular/projects/laravel-angular/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "resources/angular/projects/laravel-angular/e2e/protractor.conf.js",
+            "devServerTarget": "laravel-angular:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "laravel-angular:serve:production"
+            }
+          }
+        }
+      }
+    }},
+  "defaultProject": "laravel-angular"
+}
