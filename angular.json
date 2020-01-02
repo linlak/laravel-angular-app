@@ -28,7 +28,8 @@
               "resources/angular/projects/laravel-angular/src/assets"
             ],
             "styles": [
-              "resources/angular/projects/laravel-angular/src/styles.sass"
+              "resources/angular/projects/laravel-angular/src/styles.sass",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": []
           },
