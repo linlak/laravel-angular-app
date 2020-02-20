@@ -1,0 +1,59 @@
+{
+    "products": [{
+            "id": 1,
+            "name": "Browse top",
+            "quantity": 100,
+            "price": 15000,
+            "currency": "ugx",
+            "prev_price": 0,
+            "contact": {
+                "phone": "0751921465",
+                "name": "Linus Nowomukama",
+                "id": 3
+            },
+            "images": []
+        },
+        {
+            "id": 4,
+            "name": "Browse top",
+            "quantity": 100,
+            "price": 15000,
+            "currency": "ugx",
+            "prev_price": 0,
+            "contact": {
+                "phone": "0751921465",
+                "name": "Linus Nowomukama",
+                "id": 3
+            },
+            "images": []
+        },
+        {
+            "id": 2,
+            "name": "Browse top",
+            "quantity": 100,
+            "price": 15000,
+            "currency": "ugx",
+            "prev_price": 0,
+            "contact": {
+                "phone": "0751921465",
+                "name": "Linus Nowomukama",
+                "id": 3
+            },
+            "images": []
+        },
+        {
+            "id": 3,
+            "name": "Browse top",
+            "quantity": 100,
+            "price": 15000,
+            "currency": "ugx",
+            "prev_price": 0,
+            "contact": {
+                "phone": "0751921465",
+                "name": "Linus Nowomukama",
+                "id": 3
+            },
+            "images": []
+        }
+    ]
+}

@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProfileModule } from './profile/profile.module';
-import { AuthServicesModule } from './auth-services/auth-services.module';
 import { AuthRoutingModule } from './auth-routing.module';
+import { AuthServicesModule } from './auth-services/auth-services.module';
 
 
 
@@ -11,14 +10,12 @@ import { AuthRoutingModule } from './auth-routing.module';
     ],
   imports: [
     CommonModule,
-    AuthRoutingModule,
-    ProfileModule,
     AuthServicesModule,
+    AuthRoutingModule,
   ],
   exports: [
-    AuthServicesModule,
-    AuthRoutingModule,
-    ProfileModule
+    // AuthServicesModule,
+    AuthRoutingModule
   ]
 })
 export class AuthModule { }

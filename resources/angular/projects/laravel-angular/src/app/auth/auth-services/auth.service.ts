@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router, UrlTree } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
+import { LoginRequest } from '../models/login-request';
 
 @Injectable({
   providedIn: 'root'
@@ -48,7 +49,8 @@ export class AuthService {
     this.router.navigate([url]);
   }
 
-  public login() {
+  public login(data: LoginRequest) {
+    console.log(data);
     this.logedIn.next(true);
     this.intended('/');
   }

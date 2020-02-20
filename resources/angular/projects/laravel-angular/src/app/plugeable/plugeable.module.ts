@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CorouselComponent } from './corousel/corousel.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MServicesModule } from '../m-services/m-services.module';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    MServicesModule
   ],
   exports: [
     CommonModule,
@@ -21,6 +23,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     NgbModule,
     CorouselComponent,
+    MServicesModule
   ]
 })
 export class PlugeableModule {

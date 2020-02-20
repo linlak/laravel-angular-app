@@ -6,6 +6,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared.module';
 import { HeaderComponent } from './header.component';
 import { PlugeableModule } from './plugeable/plugeable.module';
+import { MServicesModule } from './m-services/m-services.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormlyModule } from '@ngx-formly/core';
+import { FormlyMaterialModule } from '@ngx-formly/material';
 
 @NgModule({
   declarations: [
@@ -14,9 +19,14 @@ import { PlugeableModule } from './plugeable/plugeable.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     PlugeableModule.forRoot(),
     SharedModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    MServicesModule,
+    ReactiveFormsModule,
+    FormlyModule.forRoot(),
+    FormlyMaterialModule
   ],
   exports: [
     PlugeableModule

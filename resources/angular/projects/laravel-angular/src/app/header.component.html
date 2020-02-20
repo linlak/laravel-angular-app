@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-sm navbar-light bg-light mb-3">
-  <a class="navbar-brand" [routerLink]="'.'">Laravel Angular App</a>
+<nav class="navbar navbar-expand-sm navbar-dark bg-info mb-3">
+  <a class="navbar-brand" [routerLink]="'.'">{{appName}}</a>
 
   <!-- Step 3: Toggle the value of the property when the toggler button is clicked. -->
   <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
@@ -13,6 +13,34 @@
       <li class="nav-item" routerLinkExactActive="active">
         <!-- Step 4: Close the menu when a link is clicked. -->
         <a class="nav-link" [routerLink]="'./about-us'" (click)="isMenuCollapsed = false">About</a>
+      </li>
+      <li class="nav-item" routerLinkExactActive="active">
+        <!-- Step 4: Close the menu when a link is clicked. -->
+        <a class="nav-link" [routerLink]="'./staff'" (click)="isMenuCollapsed = false">Staff</a>
+      </li>
+      <li class="nav-item" routerLinkExactActive="active">
+        <!-- Step 4: Close the menu when a link is clicked. -->
+        <a class="nav-link" [routerLink]="'./gallery'" (click)="isMenuCollapsed = false">Gallery</a>
+      </li>
+      <li class="nav-item" routerLinkExactActive="active">
+        <!-- Step 4: Close the menu when a link is clicked. -->
+        <a class="nav-link" [routerLink]="'./products'" (click)="isMenuCollapsed = false">Products</a>
+      </li>
+      <li class="nav-item" routerLinkExactActive="active">
+        <!-- Step 4: Close the menu when a link is clicked. -->
+        <a class="nav-link" [routerLink]="'./services'" (click)="isMenuCollapsed = false">Services</a>
+      </li>
+      <li class="nav-item" routerLinkExactActive="active">
+        <!-- Step 4: Close the menu when a link is clicked. -->
+        <a class="nav-link" [routerLink]="'./testimonies'" (click)="isMenuCollapsed = false">Testimonies</a>
+      </li>
+      <li class="nav-item" routerLinkExactActive="active">
+        <!-- Step 4: Close the menu when a link is clicked. -->
+        <a class="nav-link" [routerLink]="'./career'" (click)="isMenuCollapsed = false">Career</a>
+      </li>
+      <li class="nav-item" routerLinkExactActive="active">
+        <!-- Step 4: Close the menu when a link is clicked. -->
+        <a class="nav-link" [routerLink]="'./donations'" (click)="isMenuCollapsed = false">Donations</a>
       </li>
       <li class="nav-item" routerLinkExactActive="active">
         <!-- Step 4: Close the menu when a link is clicked. -->

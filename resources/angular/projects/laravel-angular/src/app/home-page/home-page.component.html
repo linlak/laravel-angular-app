@@ -1,16 +1,17 @@
-<div class="row">
+<div class="row justify-content-center">
     <div class="col-sm-8 col-lg-9">
-        <app-corousel></app-corousel>
-        <div class="row">
-            <div class="col-12">
-                <h3>Client Testmonies</h3>
-            </div>
+        <div style="margin-bottom: 20px;">
+            <button *ngFor="let example of examples" (click)="loadExample(example)" class="btn" [class.btn-primary]="type === example">
+           {{ example }}
+         </button>
         </div>
-    </div>
-    <div class="col-sm-4 col-lg-3">
-        <h3 class="text-center">Side</h3>
-        <ngb-toast header="Notification header">
-          Content of the notification
-        </ngb-toast>
+
+        <form [formGroup]="form" (ngSubmit)="submit()" *ngIf="fields">
+            <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary submit-button" [disabled]="!form.valid">Submit</button>
+            </div>
+        </form>
+
     </div>
 </div>

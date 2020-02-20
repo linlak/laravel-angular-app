@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-
+import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from './auth-services/auth.guard';
+import { UnAuthGuard } from './auth-services/un-auth.guard';
+import { PlugeableModule } from '../plugeable/plugeable.module';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { RecoverPasswordComponent } from './recover-password/recover-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { ResetPasswordConfirmComponent } from './reset-password-confirm/reset-password-confirm.component';
 import { ActivationCodeComponent } from './activation-code/activation-code.component';
-import { Routes, RouterModule } from '@angular/router';
-import { AuthGuard } from './auth-services/auth.guard';
-import { UnAuthGuard } from './auth-services/un-auth.guard';
 
 const authRoutes: Routes = [
   {
@@ -45,6 +45,7 @@ const authRoutes: Routes = [
       ],
   imports: [
     CommonModule,
+    PlugeableModule,
     RouterModule.forRoot(authRoutes)
   ],
   exports: [

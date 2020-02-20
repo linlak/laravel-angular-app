@@ -5,9 +5,10 @@ import { Subscription, Observable } from 'rxjs';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.sass']
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  appName = 'AFRO-HELVETIC CHARITY';
   constructor(private auth: AuthService) { }
   isUser: boolean;
   authSubscriber: Subscription;

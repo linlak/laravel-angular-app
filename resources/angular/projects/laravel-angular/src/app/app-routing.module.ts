@@ -10,32 +10,53 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { AuthGuard } from './auth/auth-services/auth.guard';
 import { AdminGuard } from './auth/auth-services/admin.guard';
+import { DonationsModule } from './donations/donations.module';
+import { GalleryModule } from './gallery/gallery.module';
+import { CarrerModule } from './carrer/carrer.module';
+import { ProductsModule } from './products/products.module';
+import { ServicesModule } from './services/services.module';
+import { TestimoniesModule } from './testimonies/testimonies.module';
+import { AuthModule } from './auth/auth.module';
+import { ProfileModule } from './profile/profile.module';
+import { UsersModule } from './users/users.module';
+import { StaffModule } from './staff/staff.module';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomePageComponent
+    component: HomePageComponent,
+    data: {depth: 1}
   },
   {
     path: 'about-us',
     component: AboutComponent,
-    canActivate: [AdminGuard]
+    data: { depth: 1 }
   },
   {
     path: 'contact-us',
     component: ContactComponent,
-    canActivate: [AuthGuard]
+    data: { depth: 2 }
   },
-  { path: '**', component: PageNotFoundComponent }
+  { path: '**', component: PageNotFoundComponent, data: { depth: 1 } },
 ];
 
 @NgModule({
-  declarations: [HomePageComponent, PageNotFoundComponent, AboutComponent, ContactComponent],
+  declarations: [HomePageComponent, PageNotFoundComponent,
+     AboutComponent, ContactComponent],
   imports: [
     CommonModule,
+    ProfileModule,
+    AuthModule,
+    DonationsModule,
+    GalleryModule,
+    CarrerModule,
+    ProductsModule,
+    ServicesModule,
+    TestimoniesModule,
     SharedModule,
     RouterModule.forRoot(routes),
-    AuthRoutingModule,
+    UsersModule,
+    StaffModule,
   ],
   exports: [RouterModule]
 })

@@ -4,13 +4,15 @@ import { AuthService } from './auth.service';
 import { AdminGuard } from './admin.guard';
 import { AuthGuard } from './auth.guard';
 import { UnAuthGuard } from './un-auth.guard';
+import { PlugeableModule } from '../../plugeable/plugeable.module';
 
 
 
 @NgModule({
-  declarations: [AuthService],
+  declarations: [],
   imports: [
-    CommonModule
+    CommonModule,
+    PlugeableModule
   ],
   providers: [
     AuthService, AdminGuard, AuthGuard, UnAuthGuard
